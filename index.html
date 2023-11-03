@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Канбан</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kanban-heading">
+            <strong class="kanban-heading-text">Канбан Доска</strong>
+        </div>
+        <div class="kanban-board">
+            <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Новые задания</strong>
+                <div class="task-button-block">
+                    <button id="task-button" onclick="createTask()">Создать новую задачу</span>
+                </div>
+                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 1</span>
+                </div>
+                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 2</span>
+                </div>
+                <div class="task" id="task3" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 3</span>
+                </div>
+                <div class="task" id="task4" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 4</span>
+                </div>
+                <div class="task" id="task5" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 5</span>
+                </div>
+                <div class="task" id="task6" draggable="true" ondragstart="drag(event)">
+                    <span>Задача 6</span>
+                </div>
+            </div>
+            <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Текущие задания</strong>
+            </div>
+            <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Выполненные</strong>
+            </div>
+            <div class="create-new-task-block" id="create-new-task-block">
+                <strong>Новая Задача</strong>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">Задача</label>
+                    <input class="form-row-input" type="text" name="task-name" id="task-name">
+                </span>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">Описание</label>
+                    <textarea class="form-row-input" name="task-description" id="task-description" cols="70" rows="10"></textarea>
+                </span>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">Статус</label>
+                    <select class="form-row-input" name="task-status" id="task-status">
+                        <option value="todo">Новое</option>
+                        <option value="inprogress">Текущее</option>
+                        <option value="done">Выполненное</option>
+                    </select>
+                </span>
+                <span class="form-row-buttons">
+                    <button id="edit-button" onclick="editTask()">Редактировать</span>
+                    <button id="save-button" onclick="saveTask()">Сохранить</span>
+                    <button id="cancel-button" onclick="createTask()">Отменить</span>
+                </span>
+            </div>
+        </div>
+    </div>
+   <script src="main.js"></script> 
+</body>
+</html>
